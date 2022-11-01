@@ -4,7 +4,8 @@ module  JetTool
     using   StructParticle
 
     export  combine_particles_for_events
-    export  transverse_momentum
+    export  energy_momentum_within_cone_r
+    # export  transverse_momentum
 
     include("Combine.jl")
     include("Distance.jl")
