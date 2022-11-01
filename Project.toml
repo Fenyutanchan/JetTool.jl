@@ -4,4 +4,5 @@ authors = ["Quan-feng WU <wuquanfeng@ihep.ac.cn>"]
 version = "0.1.0"
 
 [deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 StructParticle = "ba31282d-ba71-4615-a5c1-2453621d5387"
