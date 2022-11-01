@@ -1,6 +1,7 @@
 module  JetTool
 
-    using   StructParticle    
+    using   LinearAlgebra
+    using   StructParticle
 
     export  transverse_momentum
 
