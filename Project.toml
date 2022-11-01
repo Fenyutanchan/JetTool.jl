@@ -1,0 +1,7 @@
+name = "JetTool"
+uuid = "b22dc29b-815f-4300-a1b3-e2f97893f71a"
+authors = ["Quan-feng WU <wuquanfeng@ihep.ac.cn>"]
+version = "0.1.0"
+
+[deps]
+StructParticle = "ba31282d-ba71-4615-a5c1-2453621d5387"
