@@ -2,7 +2,7 @@ module  JetTool
 
     using   StructParticle    
 
-    export  
+    export  transverse_momentum
 
     include("Combine.jl")
     include("Distance.jl")
