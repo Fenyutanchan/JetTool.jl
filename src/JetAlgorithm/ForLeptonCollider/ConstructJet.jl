@@ -17,7 +17,7 @@ function construct_jets_for_lepton_collision(
     
     parameters_list =   deleteat!(
         [jet_radius, kT_parameter],
-        [
+        .![
             combination_function(jet_radius_flag),
             combination_function(kT_parameter_flag)
         ]
