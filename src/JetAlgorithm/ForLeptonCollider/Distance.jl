@@ -2,7 +2,7 @@ calc_cosΔθ(
     a::AbstractParticle,
     b::AbstractParticle
 )::Real = transpose(a.Momentum) * b.Momentum / (
-    abs(a.Momentum) * abs(b.Momentum)
+    norm(a.Momentum) * norm(b.Momentum)
 )
 
 distance_Spherical_Generalized_kT(
