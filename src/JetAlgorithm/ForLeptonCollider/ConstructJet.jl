@@ -1,6 +1,6 @@
 function construct_jets_for_lepton_collision(
     event::Event, jet_radius::Real;
-    alg::Symbol=:Generalized_kT,
+    alg::Symbol=:Spherical_Generalized_kT,
     kT_parameter::Real=-1
 )::Event
     @assert alg ∈ [
