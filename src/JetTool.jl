@@ -7,17 +7,17 @@ module  JetTool
     # export  energy_momentum_within_cone_r
     # export  transverse_momentum
 
-    # include("Combine.jl")
     # include("Distance.jl")
     # include("EergyDistribution.jl")
     # include("ParticleParameter.jl")
 
     export construct_jets_for_lepton_collision
 
+    include("Combine.jl")
+
     (include ∘ joinpath)(
         "JetAlgorithm",
-        "ForLeptonCollider",
-        "ForLeptonCollider.jl"
+        "JetAlgorithm.jl"
     )
 
 end # module JetTool
