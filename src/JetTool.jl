@@ -12,8 +12,14 @@ module  JetTool
     # include("ParticleParameter.jl")
 
     export construct_jets_for_lepton_collision
+    export energy_within_cone_r
 
     include("Combine.jl")
+
+    (include ∘ joinpath)(
+        "EnergyDistribution/"
+        "EnergyDistribution.jl"
+    )
 
     (include ∘ joinpath)(
         "JetAlgorithm",
