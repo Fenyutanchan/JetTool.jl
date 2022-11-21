@@ -1,8 +1,9 @@
 function construct_jets_for_lepton_collision(
-    event::Event, jet_radius::Real;
+    event::Union{Event, Jet},
+    jet_radius::Real;
     alg::Symbol=:Spherical_Generalized_kT,
     kT_parameter::Real=-1
-)::Event
+)::Union{Event, Jet}
     @assert alg ∈ [
         :Spherical_Generalized_kT,
         # :Spherical_kT,
@@ -26,10 +27,10 @@ function construct_jets_for_lepton_collision(
 end
 
 function combination_Spherical_Generalized_kT(
-    event::Event,
+    event::Union{Event, Jet},
     jet_radius::Real,
     kT_parameter::Real=-1
-)
+)::Union{Event, Jet}
     in_event_particles  =   Jet.(event.Particles)
     out_event_particles =   Jet[]
 
@@ -86,10 +87,20 @@ function combination_Spherical_Generalized_kT(
         end
     end
 
-    return  Event(
-        event.Event_Weight,
-        out_event_particles
-    )
+    return if typeof(event) == Event
+        Event(
+            event.Event_Weight,
+            out_event_particles
+        )
+    elseif typeof(event) == Jet
+        Jet(
+            event.PDGID,
+            event.Momentum,
+            event.Energy,
+            event.Mass,
+            out_event_particles
+        )
+    end
 end
 combination_Spherical_Generalized_kT(::typeof(jet_radius_flag))::Bool   =   true
 combination_Spherical_Generalized_kT(::typeof(kT_parameter_flag))::Bool =   true
