@@ -17,7 +17,7 @@ module  JetTool
     include("Combine.jl")
 
     (include ∘ joinpath)(
-        "EnergyDistribution/"
+        "EnergyDistribution/",
         "EnergyDistribution.jl"
     )
 
